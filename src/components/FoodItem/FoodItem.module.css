@@ -1,0 +1,33 @@
+.foodItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.foodImage {
+  border-radius: 0.5rem;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.25rem;
+}
+
+.category {
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-regular);
+  color: var(--clr-rose-500);
+}
+
+.name {
+  font-size: var(--fs--body-md);
+  font-weight: var(--fw-semibold);
+}
+
+.price {
+  color: var(--clr-red);
+}

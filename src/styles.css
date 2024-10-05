@@ -71,9 +71,10 @@ body {
   align-items: center;
   font-family: var(--ff-red-hat-text);
   font-size: var(--fs-body-md);
-  font-weight: var(--fw-regular);
+  font-weight: var(--fw-semibold);
   line-height: 1.5;
   letter-spacing: 0px;
   color: var(--clr-rose-900);
   background-color: var(--clr-rose-50);
+  padding: 1.5rem;
 }
