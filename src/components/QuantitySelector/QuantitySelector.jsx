@@ -2,13 +2,18 @@ import styles from "./QuantitySelector.module.css"
 
 import { BiMinus, BiPlus } from "react-icons/bi"
 
-function QuantitySelector({ children, productName, setItemCount }) {
+function QuantitySelector({
+  children,
+  productName,
+  itemCount,
+  onUpdateItemCount,
+}) {
   function handleDecrease() {
-    setItemCount((prevItemCount) => prevItemCount - 1)
+    onUpdateItemCount(itemCount - 1)
   }
 
   function handleIncrease() {
-    setItemCount((prevItemCount) => prevItemCount + 1)
+    onUpdateItemCount(itemCount + 1)
   }
 
   return (

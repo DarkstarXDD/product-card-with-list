@@ -10,8 +10,8 @@ export default function FoodItem() {
   const foodId = useId()
   const isInCart = itemCount > 0
 
-  function handleAddToCart() {
-    setItemCount(1)
+  function onUpdateItemCount(newCount) {
+    setItemCount(newCount)
   }
 
   return (
@@ -33,7 +33,7 @@ export default function FoodItem() {
       </picture>
 
       {!isInCart && (
-        <AddToCartButton handleAddToCart={handleAddToCart}>
+        <AddToCartButton handleAddToCart={() => setItemCount(1)}>
           Add to Cart
         </AddToCartButton>
       )}
@@ -41,7 +41,8 @@ export default function FoodItem() {
       {isInCart && (
         <QuantitySelector
           productName="Waffle with Berries"
-          setItemCount={setItemCount}
+          itemCount={itemCount}
+          onUpdateItemCount={onUpdateItemCount}
         >
           {itemCount}
         </QuantitySelector>
