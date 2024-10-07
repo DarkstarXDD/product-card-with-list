@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-rose-50);
+  padding: 1rem;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.text {
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-regular);
+}
+
+.textStrong {
+  font-weight: var(--fw-semibold);
+}

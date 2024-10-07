@@ -29,7 +29,7 @@ function QuantitySelector({
         <BiMinus className={styles.buttonIcon} />
       </button>
 
-      <p role="alert">{children}</p>
+      <p aria-live="polite">{children}</p>
 
       <button
         aria-label={`Increase quantity of ${productName}`}
