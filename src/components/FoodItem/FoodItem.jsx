@@ -6,12 +6,11 @@ import AddToCartButton from "../AddToCartButton"
 import QuantitySelector from "../QuantitySelector"
 
 export default function FoodItem() {
-  const [isInCart, setIsInCart] = useState(false)
   const [itemCount, setItemCount] = useState(0)
   const foodId = useId()
+  const isInCart = itemCount > 0
 
   function handleAddToCart() {
-    setIsInCart(true)
     setItemCount(1)
   }
 
@@ -42,9 +41,7 @@ export default function FoodItem() {
       {isInCart && (
         <QuantitySelector
           productName="Waffle with Berries"
-          itemCount={itemCount}
           setItemCount={setItemCount}
-          setIsInCart={setIsInCart}
         >
           {itemCount}
         </QuantitySelector>
