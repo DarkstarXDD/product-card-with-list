@@ -2,7 +2,7 @@ import "/src/styles.css"
 
 import CartProvider from "./components/Cart/CartProvider"
 
-import FoodItem from "./components/FoodItem"
+import FoodList from "./components/FoodList"
 import Cart from "./components/Cart"
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
     <CartProvider>
       <main>
         <h1>Desserts</h1>
-        <FoodItem />
+        <FoodList />
         <Cart />
       </main>
     </CartProvider>

@@ -6,10 +6,7 @@ import { useCartContext } from "../Cart/useCartContext"
 import AddToCartButton from "../AddToCartButton"
 import QuantitySelector from "../QuantitySelector"
 
-export default function FoodItem() {
-  const id = 1
-  const name = "Waffle with Berries"
-  const price = 6.5
+export default function FoodItem({ id, name, price, category, image }) {
   const foodId = useId()
 
   const { cart, itemCount, addToCart, updateItemCount } = useCartContext(id)
@@ -29,19 +26,9 @@ export default function FoodItem() {
   return (
     <section className={styles.foodItem} aria-labelledby={foodId}>
       <picture>
-        <source
-          srcSet="/assets/images/image-waffle-desktop.jpg"
-          media="(min-width: 1440px)"
-        />
-        <source
-          srcSet="/assets/images/image-waffle-tablet.jpg"
-          media="(min-width: 768px)"
-        />
-        <img
-          className={styles.foodImage}
-          src="/assets/images/image-waffle-mobile.jpg"
-          alt=""
-        />
+        <source srcSet={image.desktop} media="(min-width: 1440px)" />
+        <source srcSet={image.tablet} media="(min-width: 768px)" />
+        <img className={styles.foodImage} src={image.mobile} alt="" />
       </picture>
 
       {!isInCart && (
@@ -59,11 +46,11 @@ export default function FoodItem() {
       )}
 
       <div className={styles.itemDetails}>
-        <p className={styles.category}>Waffle</p>
+        <p className={styles.category}>{category}</p>
         <h2 id={foodId} className={styles.name}>
-          Waffle with Berries
+          {name}
         </h2>
-        <p className={styles.price}>$6.50</p>
+        <p className={styles.price}>${price}</p>
       </div>
     </section>
   )
