@@ -6,7 +6,11 @@ import CartItem from "./CartItem"
 import CarbonNeutral from "../CarbonNeutral"
 
 export default function Cart() {
-  const { cart } = useCartContext()
+  const { cart, removeFromCart } = useCartContext()
+
+  function onRemove(id) {
+    removeFromCart(id)
+  }
 
   return (
     <div className={styles.cart}>
@@ -16,9 +20,11 @@ export default function Cart() {
         {cart.map((item) => (
           <CartItem
             key={item.id}
+            id={item.id}
             name={item.name}
             quantity={item.itemCount}
             price={item.price}
+            onRemove={onRemove}
           />
         ))}
       </ul>
