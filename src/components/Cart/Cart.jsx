@@ -1,16 +1,26 @@
 import styles from "./Cart.module.css"
 
+import { useCartContext } from "./useCartContext"
+
 import CartItem from "./CartItem"
 import CarbonNeutral from "../CarbonNeutral"
 
 export default function Cart() {
+  const { cart } = useCartContext()
+
   return (
     <div className={styles.cart}>
-      <h2 className={styles.heading}>Your Cart (7)</h2>
+      <h2 className={styles.heading}>Your Cart ({cart.length})</h2>
 
       <ul className={styles.items}>
-        <CartItem name="Classic Tiramisu" quantity="1" price="5.50" />
-        <CartItem name="Vanilla Bean Crème Brûlée" quantity="4" price="7.00" />
+        {cart.map((item) => (
+          <CartItem
+            key={item.id}
+            name={item.name}
+            quantity={item.itemCount}
+            price={item.price}
+          />
+        ))}
       </ul>
 
       <p className={styles.totalPriceWrapper}>

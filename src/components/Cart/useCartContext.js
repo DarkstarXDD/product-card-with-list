@@ -2,7 +2,8 @@ import { useContext } from "react"
 import { CartContext } from "./CartContext"
 
 export function useCartContext(id) {
-  const { cart, addToCart, updateItemCount } = useContext(CartContext)
+  const { cart, addToCart, updateItemCount, removeFromCart } =
+    useContext(CartContext)
 
   const item = cart.find((currentItem) => currentItem.id === id)
 
@@ -11,5 +12,6 @@ export function useCartContext(id) {
     itemCount: item ? item.itemCount : 0,
     addToCart,
     updateItemCount,
+    removeFromCart,
   }
 }
