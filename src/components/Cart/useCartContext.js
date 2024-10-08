@@ -1,11 +1,15 @@
 import { useContext } from "react"
 import { CartContext } from "./CartContext"
 
-export function useCartContext() {
-  const context = useContext(CartContext)
+export function useCartContext(id) {
+  const { cart, addToCart, updateItemCount } = useContext(CartContext)
 
-  if (!context) {
-    throw new Error("Child components must be inside a provider wrapper")
+  const item = cart.find((currentItem) => currentItem.id === id)
+
+  return {
+    cart,
+    itemCount: item ? item.itemCount : 0,
+    addToCart,
+    updateItemCount,
   }
-  return context
 }

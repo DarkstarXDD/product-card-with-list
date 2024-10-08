@@ -1,29 +1,27 @@
 import styles from "./FoodItem.module.css"
 
-import { useState, useId } from "react"
+import { useId } from "react"
 import { useCartContext } from "../Cart/useCartContext"
 
 import AddToCartButton from "../AddToCartButton"
 import QuantitySelector from "../QuantitySelector"
 
 export default function FoodItem() {
-  const { cart, addToCart, updateItemCount } = useCartContext()
-  const [itemCount, setItemCount] = useState(0)
-
-  const foodId = useId()
-  const isInCart = itemCount > 0
-
+  const id = 1
   const name = "Waffle with Berries"
   const price = 6.5
+  const foodId = useId()
+
+  const { cart, itemCount, addToCart, updateItemCount } = useCartContext(id)
+
+  const isInCart = itemCount > 0
 
   function onUpdateItemCount(newCount) {
-    setItemCount(newCount)
-    updateItemCount(name, newCount)
+    updateItemCount(id, newCount)
   }
 
   function onAddToCart() {
-    setItemCount(1)
-    addToCart({ name, itemCount: 1, price })
+    addToCart({ id, name, itemCount: 1, price })
   }
 
   console.log(cart)

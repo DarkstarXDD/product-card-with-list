@@ -9,10 +9,10 @@ export default function CartProvider({ children }) {
     setCart((prevCart) => [...prevCart, item])
   }
 
-  function updateItemCount(name, newCount) {
+  function updateItemCount(id, newCount) {
     setCart((prevCart) =>
       prevCart.map((item) =>
-        item.name === name ? { ...item, itemCount: newCount } : item
+        item.id === id ? { ...item, itemCount: newCount } : item
       )
     )
   }
