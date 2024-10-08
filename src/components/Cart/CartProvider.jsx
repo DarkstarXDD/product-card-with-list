@@ -9,16 +9,18 @@ export default function CartProvider({ children }) {
     setCart((prevCart) => [...prevCart, item])
   }
 
-  function updateItemCount(id, newCount) {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === id ? { ...item, itemCount: newCount } : item
-      )
-    )
+  function removeFromCart(id) {
+    setCart((prevCart) => prevCart.filter((item) => !item.id === id))
   }
 
-  function removeFromCart() {
-    return null
+  function updateItemCount(id, newCount) {
+    newCount === 0
+      ? removeFromCart(id)
+      : setCart((prevCart) =>
+          prevCart.map((item) =>
+            item.id === id ? { ...item, itemCount: newCount } : item
+          )
+        )
   }
 
   return (
