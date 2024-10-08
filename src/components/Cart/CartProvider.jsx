@@ -10,7 +10,7 @@ export default function CartProvider({ children }) {
   }
 
   function removeFromCart(id) {
-    setCart((prevCart) => prevCart.filter((item) => !item.id === id))
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id))
   }
 
   function updateItemCount(id, newCount) {
