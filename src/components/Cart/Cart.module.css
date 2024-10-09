@@ -1,4 +1,6 @@
 .cart {
+  width: 100%;
+  max-width: 40rem;
   max-height: max-content;
   display: flex;
   flex-direction: column;
@@ -8,6 +10,7 @@
   background-color: var(--clr-white);
   border-radius: 12px;
   padding: 1.5rem;
+  justify-self: center;
 }
 
 @media (min-width: 90rem) {
