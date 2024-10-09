@@ -106,3 +106,12 @@ body {
     padding: 2.5rem;
   }
 }
+
+@media (min-width: 90rem) {
+  .main {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "heading cart"
+      "fooditems cart";
+  }
+}

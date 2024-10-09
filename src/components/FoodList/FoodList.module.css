@@ -16,5 +16,6 @@
 @media (min-width: 90rem) {
   .foodItems {
     grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+    grid-area: fooditems;
   }
 }

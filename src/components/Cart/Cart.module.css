@@ -1,4 +1,5 @@
 .cart {
+  max-height: max-content;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -7,6 +8,12 @@
   background-color: var(--clr-white);
   border-radius: 12px;
   padding: 1.5rem;
+}
+
+@media (min-width: 90rem) {
+  .cart {
+    grid-area: cart;
+  }
 }
 
 .heading {
