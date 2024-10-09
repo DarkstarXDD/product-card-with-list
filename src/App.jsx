@@ -8,8 +8,8 @@ import Cart from "./components/Cart"
 export default function App() {
   return (
     <CartProvider>
-      <main>
-        <h1>Desserts</h1>
+      <main className="main">
+        <h1 className="heading">Desserts</h1>
         <FoodList />
         <Cart />
       </main>

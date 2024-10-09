@@ -43,7 +43,7 @@ textarea {
   --fs-body-sm: 0.875rem;
   --fs-body-md: 1rem;
   --fs-body-lg: 1.5rem;
-  --fs-body-xlg: 3.5rem;
+  --fs-body-xlg: 2.5rem;
 
   --fw-regular: 400;
   --fw-semibold: 600;
@@ -67,7 +67,6 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   font-family: var(--ff-red-hat-text);
   font-size: var(--fs-body-md);
@@ -77,4 +76,33 @@ body {
   color: var(--clr-rose-900);
   background-color: var(--clr-rose-50);
   padding: 1.5rem;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 100%;
+  max-width: 76rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.heading {
+  font-size: var(--fs-body-xlg);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  align-self: flex-start;
+}
+
+@media (min-width: 48rem) {
+  body {
+    padding: 2.5rem;
+  }
 }
