@@ -117,7 +117,7 @@ body {
   }
 
   .main {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr minmax(24rem, auto);
     grid-template-areas:
       "heading cart"
       "fooditems cart";

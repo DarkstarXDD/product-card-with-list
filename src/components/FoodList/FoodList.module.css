@@ -1,6 +1,5 @@
 .foodItems {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
   justify-content: center;
   justify-items: center;
   align-items: center;
