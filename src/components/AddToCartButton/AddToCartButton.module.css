@@ -11,10 +11,9 @@
   padding: 0.75rem 1.75rem;
   outline-color: var(--clr-red);
   cursor: pointer;
-  /* transform: translateY(-50%); */
   grid-column: 1;
   grid-row: 2 / 4;
-  align-self: center;
+  justify-self: center;
 }
 
 .button:active {
