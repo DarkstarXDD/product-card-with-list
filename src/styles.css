@@ -88,7 +88,7 @@ body {
 
 .main {
   width: 100%;
-  max-width: 76rem;
+  max-width: 24rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -101,13 +101,21 @@ body {
   align-self: flex-start;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 36rem) {
   body {
     padding: 2.5rem;
+  }
+
+  .main {
+    max-width: 76rem;
   }
 }
 
 @media (min-width: 90rem) {
+  body {
+    padding: 5.5rem;
+  }
+
   .main {
     grid-template-columns: 1fr auto;
     grid-template-areas:

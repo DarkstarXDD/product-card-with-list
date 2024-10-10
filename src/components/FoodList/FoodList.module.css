@@ -7,7 +7,7 @@
   gap: 1.5rem;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 36rem) {
   .foodItems {
     grid-template-columns: repeat(auto-fit, minmax(13.25rem, 1fr));
     gap: 2rem 1.5rem;
@@ -16,7 +16,7 @@
 
 @media (min-width: 90rem) {
   .foodItems {
-    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+    grid-template-columns: repeat(auto-fit, 15.625rem);
     grid-area: fooditems;
   }
 }

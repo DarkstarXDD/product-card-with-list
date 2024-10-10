@@ -27,7 +27,7 @@ export default function FoodItem({ id, name, price, category, image }) {
     <section className={styles.foodItem} aria-labelledby={foodId}>
       <picture>
         <source srcSet={image.desktop} media="(min-width: 1440px)" />
-        <source srcSet={image.tablet} media="(min-width: 768px)" />
+        <source srcSet={image.tablet} media="(min-width: 576px)" />
         <img className={styles.foodImage} src={image.mobile} alt="" />
       </picture>
 

@@ -1,5 +1,4 @@
 .foodItem {
-  max-width: 24rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
