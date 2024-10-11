@@ -14,8 +14,19 @@ export default function Cart() {
     removeFromCart(id)
   }
 
-  const CartWithItems = (
-    <>
+  if (itemCountInCart === 0) {
+    return (
+      <div className={styles.cart}>
+        <h2 className={styles.heading}>Your Cart (0)</h2>
+        <EmptyCart />
+      </div>
+    )
+  }
+
+  return (
+    <div className={styles.cart}>
+      <h2 className={styles.heading}>Your Cart ({itemCountInCart})</h2>
+
       <ul className={styles.items}>
         {cart.map((item) => (
           <CartItem key={item.id} {...item} onRemove={onRemove} />
@@ -28,14 +39,6 @@ export default function Cart() {
       </p>
 
       <CarbonNeutral />
-    </>
-  )
-
-  return (
-    <div className={styles.cart}>
-      <h2 className={styles.heading}>Your Cart ({itemCountInCart})</h2>
-
-      {itemCountInCart ? CartWithItems : <EmptyCart />}
     </div>
   )
 }
