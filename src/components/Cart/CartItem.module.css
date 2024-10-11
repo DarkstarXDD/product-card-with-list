@@ -1,10 +1,16 @@
-.itemWrapper {
+.itemOuterWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.itemInnerWrapper {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-areas:
     "name close"
-    "details close"
-    "divider divider";
+    "details close";
   gap: 0.5rem;
   font-size: var(--fs-body-sm);
   font-weight: var(--fw-semibold);
@@ -60,6 +66,4 @@
 
 .divider {
   border-bottom: 1px solid var(--clr-rose-100);
-  margin-top: 1rem;
-  grid-area: divider;
 }
