@@ -9,6 +9,11 @@ import CarbonNeutral from "../CarbonNeutral"
 export default function Cart() {
   const { cart, removeFromCart } = useCartContext()
   const itemCountInCart = cart.length
+  let cartTotal = 0
+
+  for (let i = 0; i < itemCountInCart; i++) {
+    cartTotal += cart[i].itemCount * cart[i].price
+  }
 
   function onRemove(id) {
     removeFromCart(id)
@@ -35,7 +40,7 @@ export default function Cart() {
 
       <p className={styles.totalPriceWrapper}>
         <span className={styles.totalPriceText}>Order Total</span>
-        <span className={styles.totalPrice}>$46.50</span>
+        <span className={styles.totalPrice}>${cartTotal.toFixed(2)}</span>
       </p>
 
       <CarbonNeutral />
