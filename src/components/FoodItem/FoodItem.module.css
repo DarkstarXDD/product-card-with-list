@@ -15,6 +15,12 @@
 }
 
 .foodImage {
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+.foodImageBorder {
+  border: 2px solid var(--clr-red);
   border-radius: 8px;
 }
 
