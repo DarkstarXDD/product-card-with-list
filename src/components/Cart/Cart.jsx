@@ -2,30 +2,23 @@ import styles from "./Cart.module.css"
 
 import { useCartContext } from "./useCartContext"
 
+import EmptyCart from "../EmptyCart"
 import CartItem from "./CartItem"
 import CarbonNeutral from "../CarbonNeutral"
 
 export default function Cart() {
   const { cart, removeFromCart } = useCartContext()
+  const itemCountInCart = cart.length
 
   function onRemove(id) {
     removeFromCart(id)
   }
 
-  return (
-    <div className={styles.cart}>
-      <h2 className={styles.heading}>Your Cart ({cart.length})</h2>
-
+  const CartWithItems = (
+    <>
       <ul className={styles.items}>
         {cart.map((item) => (
-          <CartItem
-            key={item.id}
-            id={item.id}
-            name={item.name}
-            quantity={item.itemCount}
-            price={item.price}
-            onRemove={onRemove}
-          />
+          <CartItem key={item.id} {...item} onRemove={onRemove} />
         ))}
       </ul>
 
@@ -35,6 +28,14 @@ export default function Cart() {
       </p>
 
       <CarbonNeutral />
+    </>
+  )
+
+  return (
+    <div className={styles.cart}>
+      <h2 className={styles.heading}>Your Cart ({itemCountInCart})</h2>
+
+      {itemCountInCart ? CartWithItems : <EmptyCart />}
     </div>
   )
 }
