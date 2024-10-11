@@ -58,7 +58,7 @@ export default function FoodItem({ id, name, price, category, image }) {
         <h2 id={foodId} className={styles.name}>
           {name}
         </h2>
-        <p className={styles.price}>${price}</p>
+        <p className={styles.price}>${price.toFixed(2)}</p>
       </div>
     </section>
   )
