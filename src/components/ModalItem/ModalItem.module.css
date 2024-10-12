@@ -1,0 +1,55 @@
+.itemOuterWrapper {
+  display: grid;
+  gap: 1rem;
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+}
+
+.itemInnerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.imageNameWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.thumbnail {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 4px;
+}
+
+.detailsOuterWrapper {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.detailsInnerWrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.itemCount {
+  color: var(--clr-red);
+}
+
+.price {
+  font-weight: var(--fw-regular);
+  color: var(--clr-rose-500);
+}
+
+.subTotal {
+  font-size: var(--fs-body-md);
+}
+
+.divider {
+  border-bottom: 1px solid var(--clr-rose-100);
+}

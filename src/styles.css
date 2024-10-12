@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 *:focus-visible {
@@ -22,11 +23,6 @@ picture {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-ol[role="list"],
-ul[role="list"] {
-  list-style: none;
 }
 
 input,
