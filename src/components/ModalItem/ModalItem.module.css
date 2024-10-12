@@ -1,40 +1,41 @@
-.itemOuterWrapper {
+.item {
   display: grid;
   gap: 1rem;
   font-size: var(--fs-body-sm);
   font-weight: var(--fw-semibold);
 }
 
-.itemInnerWrapper {
+.itemOuterWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
 }
 
-.imageNameWrapper {
-  display: flex;
-  justify-content: center;
+.itemInnerWrapper {
+  display: grid;
+  justify-items: start;
   align-items: center;
-  gap: 1rem;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "image name"
+    "image count-price";
+  gap: 0.5rem 1rem;
 }
 
 .thumbnail {
   width: 3rem;
   height: 3rem;
   border-radius: 4px;
+  grid-area: image;
 }
 
-.detailsOuterWrapper {
-  display: grid;
-  gap: 0.5rem;
-}
-
-.detailsInnerWrapper {
+.countPriceWrapper {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 0.5rem;
+  grid-area: count-price;
 }
 
 .itemCount {
