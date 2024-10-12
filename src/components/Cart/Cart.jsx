@@ -5,6 +5,7 @@ import { useCartContext } from "./useCartContext"
 import EmptyCart from "../EmptyCart"
 import CartItem from "./CartItem"
 import CarbonNeutral from "../CarbonNeutral"
+import Button from "../Button"
 
 export default function Cart() {
   const { cart, removeFromCart } = useCartContext()
@@ -44,6 +45,7 @@ export default function Cart() {
       </p>
 
       <CarbonNeutral />
+      <Button>Confirm Order</Button>
     </div>
   )
 }

@@ -54,6 +54,7 @@ textarea {
 
   --clr-green: hsl(159, 69%, 38%);
   --clr-red: hsl(14, 86%, 42%);
+  --clr-red-hover: hsl(14, 86%, 31%);
 
   --clr-rose-50: hsl(20, 50%, 98%);
   --clr-rose-100: hsl(13, 31%, 94%);
