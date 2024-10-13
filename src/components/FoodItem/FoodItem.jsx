@@ -18,7 +18,7 @@ export default function FoodItem({ id, name, price, category, image }) {
   }
 
   function onAddToCart() {
-    addToCart({ id, name, itemCount: 1, price })
+    addToCart({ id, name, itemCount: 1, price, image })
   }
 
   console.log(cart)

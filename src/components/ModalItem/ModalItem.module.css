@@ -16,7 +16,7 @@
   display: grid;
   justify-items: start;
   align-items: center;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto auto;
   grid-template-areas:
     "image name"
     "image count-price";
