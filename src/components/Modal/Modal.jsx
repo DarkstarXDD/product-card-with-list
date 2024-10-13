@@ -17,7 +17,7 @@ export default function Modal({ dialogRef, onClose }) {
   }
 
   return (
-    <dialog ref={dialogRef}>
+    <dialog ref={dialogRef} className={styles.dialog}>
       <div className={styles.modalWrapper}>
         <div className={styles.topWrapper}>
           <img

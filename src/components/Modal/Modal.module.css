@@ -1,15 +1,20 @@
+.dialog {
+  background-color: var(--clr-white);
+  border: none;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  margin: auto;
+}
+
 .modalWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
-  background-color: var(--clr-white);
-  border-radius: 12px;
-  padding: 2.5rem 1.5rem;
 }
 
 @media (min-width: 36rem) {
-  .modalWrapper {
+  .dialog {
     padding: 2.5rem;
   }
 }
