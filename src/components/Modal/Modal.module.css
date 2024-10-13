@@ -44,10 +44,31 @@
   color: var(--clr-rose-500);
 }
 
-.modalItems {
+.bottomWrapper {
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
   background-color: var(--clr-rose-50);
   border-radius: 8px;
   padding: 1.5rem;
+}
+
+.modalItems {
+  display: grid;
+  gap: 1rem;
+}
+
+.orderTotalWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderTotalText {
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-regular);
+}
+
+.orderTotalPrice {
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-bold);
 }

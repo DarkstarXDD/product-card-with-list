@@ -9,6 +9,12 @@ import Button from "../Button"
 
 export default function Modal() {
   const { cart } = useCartContext()
+  const itemCountInCart = cart.length
+  let cartTotal = 0
+
+  for (let i = 0; i < itemCountInCart; i++) {
+    cartTotal += cart[i].itemCount * cart[i].price
+  }
 
   return (
     <div className={styles.modalWrapper}>
@@ -26,11 +32,20 @@ export default function Modal() {
         </div>
       </div>
 
-      <ul className={styles.modalItems}>
-        {cart.map((item) => (
-          <ModalItem key={item.id} {...item} />
-        ))}
-      </ul>
+      <div className={styles.bottomWrapper}>
+        <ul className={styles.modalItems}>
+          {cart.map((item) => (
+            <ModalItem key={item.id} {...item} />
+          ))}
+        </ul>
+
+        <p className={styles.orderTotalWrapper}>
+          <span className={styles.orderTotalText}>Order Total</span>
+          <span className={styles.orderTotalPrice}>
+            ${cartTotal.toFixed(2)}
+          </span>
+        </p>
+      </div>
 
       <Button>Start New Order</Button>
     </div>

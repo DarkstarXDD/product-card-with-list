@@ -23,6 +23,11 @@
   gap: 0.5rem 1rem;
 }
 
+.itemName {
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+}
+
 .thumbnail {
   width: 3rem;
   height: 3rem;
