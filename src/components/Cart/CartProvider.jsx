@@ -23,9 +23,13 @@ export default function CartProvider({ children }) {
         )
   }
 
+  function resetCart() {
+    setCart([])
+  }
+
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, updateItemCount, removeFromCart }}
+      value={{ cart, addToCart, updateItemCount, removeFromCart, resetCart }}
     >
       {children}
     </CartContext.Provider>

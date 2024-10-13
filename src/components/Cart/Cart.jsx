@@ -11,7 +11,7 @@ import Modal from "../Modal"
 
 export default function Cart() {
   const dialogRef = useRef()
-  const { cart, removeFromCart } = useCartContext()
+  const { cart, removeFromCart, resetCart } = useCartContext()
   const itemCountInCart = cart.length
   let cartTotal = 0
 
@@ -29,6 +29,7 @@ export default function Cart() {
 
   function closeConfirmation() {
     dialogRef.current.close()
+    resetCart()
   }
 
   if (itemCountInCart === 0) {
