@@ -1,13 +1,16 @@
 import styles from "./Cart.module.css"
 
+import { useRef } from "react"
 import { useCartContext } from "./useCartContext"
 
 import EmptyCart from "../EmptyCart"
 import CartItem from "./CartItem"
 import CarbonNeutral from "../CarbonNeutral"
 import Button from "../Button"
+import Modal from "../Modal"
 
 export default function Cart() {
+  const dialogRef = useRef()
   const { cart, removeFromCart } = useCartContext()
   const itemCountInCart = cart.length
   let cartTotal = 0
@@ -18,6 +21,14 @@ export default function Cart() {
 
   function onRemove(id) {
     removeFromCart(id)
+  }
+
+  function openConfirmation() {
+    dialogRef.current.showModal()
+  }
+
+  function closeConfirmation() {
+    dialogRef.current.close()
   }
 
   if (itemCountInCart === 0) {
@@ -45,7 +56,8 @@ export default function Cart() {
       </p>
 
       <CarbonNeutral />
-      <Button>Confirm Order</Button>
+      <Button onClick={openConfirmation}>Confirm Order</Button>
+      <Modal dialogRef={dialogRef} onClose={closeConfirmation} />
     </div>
   )
 }

@@ -9,7 +9,7 @@ import QuantitySelector from "../QuantitySelector"
 export default function FoodItem({ id, name, price, category, image }) {
   const foodId = useId()
 
-  const { cart, itemCount, addToCart, updateItemCount } = useCartContext(id)
+  const { itemCount, addToCart, updateItemCount } = useCartContext(id)
 
   const isInCart = itemCount > 0
 
@@ -20,8 +20,6 @@ export default function FoodItem({ id, name, price, category, image }) {
   function onAddToCart() {
     addToCart({ id, name, itemCount: 1, price, image })
   }
-
-  console.log(cart)
 
   return (
     <section className={styles.foodItem} aria-labelledby={foodId}>
