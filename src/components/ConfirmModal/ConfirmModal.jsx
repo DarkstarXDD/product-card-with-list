@@ -1,6 +1,6 @@
 import styles from "./ConfirmModal.module.css"
 
-import checkIcon from "../../assets/icon-order-confirmed.svg"
+import IconCheck from "../Icons/IconCheck"
 
 import ModalItem from "../ModalItem"
 import Button from "../Button"
@@ -10,13 +10,7 @@ export default function ConfirmModal({ dialogRef, cart, cartTotal, onClose }) {
     <dialog ref={dialogRef} className={styles.dialog}>
       <div className={styles.modalWrapper}>
         <div className={styles.topWrapper}>
-          <img
-            src={checkIcon}
-            alt=""
-            width={48}
-            height={48}
-            className={styles.checkIcon}
-          />
+          <IconCheck style={{ width: "2.625rem", height: "2.625rem" }} />
           <div className={styles.textWrapper}>
             <h2 className={styles.heading}>Order Confirmed</h2>
             <p className={styles.text}>We hope you enjoy your food!</p>
