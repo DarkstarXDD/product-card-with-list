@@ -1,21 +1,11 @@
 import styles from "./ConfirmModal.module.css"
 
-import { useCartContext } from "../Cart/useCartContext"
-
 import checkIcon from "../../assets/icon-order-confirmed.svg"
 
 import ModalItem from "../ModalItem"
 import Button from "../Button"
 
-export default function ConfirmModal({ dialogRef, onClose }) {
-  const { cart } = useCartContext()
-  const itemCountInCart = cart.length
-  let cartTotal = 0
-
-  for (let i = 0; i < itemCountInCart; i++) {
-    cartTotal += cart[i].itemCount * cart[i].price
-  }
-
+export default function ConfirmModal({ dialogRef, cart, cartTotal, onClose }) {
   return (
     <dialog ref={dialogRef} className={styles.dialog}>
       <div className={styles.modalWrapper}>

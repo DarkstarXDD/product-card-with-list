@@ -59,7 +59,12 @@ export default function Cart() {
       <CarbonNeutral />
       <Button onClick={openConfirmation}>Confirm Order</Button>
 
-      <ConfirmModal dialogRef={dialogRef} onClose={closeConfirmation} />
+      <ConfirmModal
+        dialogRef={dialogRef}
+        cart={cart}
+        cartTotal={cartTotal}
+        onClose={closeConfirmation}
+      />
     </div>
   )
 }
