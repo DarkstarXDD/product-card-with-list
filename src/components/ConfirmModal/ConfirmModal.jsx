@@ -1,4 +1,4 @@
-import styles from "./Modal.module.css"
+import styles from "./ConfirmModal.module.css"
 
 import { useCartContext } from "../Cart/useCartContext"
 
@@ -7,7 +7,7 @@ import checkIcon from "../../assets/icon-order-confirmed.svg"
 import ModalItem from "../ModalItem"
 import Button from "../Button"
 
-export default function Modal({ dialogRef, onClose }) {
+export default function ConfirmModal({ dialogRef, onClose }) {
   const { cart } = useCartContext()
   const itemCountInCart = cart.length
   let cartTotal = 0

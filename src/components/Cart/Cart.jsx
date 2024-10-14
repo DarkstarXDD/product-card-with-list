@@ -7,7 +7,7 @@ import EmptyCart from "../EmptyCart"
 import CartItem from "./CartItem"
 import CarbonNeutral from "../CarbonNeutral"
 import Button from "../Button"
-import Modal from "../Modal"
+import ConfirmModal from "../ConfirmModal"
 
 export default function Cart() {
   const dialogRef = useRef()
@@ -58,7 +58,8 @@ export default function Cart() {
 
       <CarbonNeutral />
       <Button onClick={openConfirmation}>Confirm Order</Button>
-      <Modal dialogRef={dialogRef} onClose={closeConfirmation} />
+
+      <ConfirmModal dialogRef={dialogRef} onClose={closeConfirmation} />
     </div>
   )
 }
