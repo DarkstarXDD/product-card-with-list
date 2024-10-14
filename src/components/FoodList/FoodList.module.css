@@ -3,7 +3,7 @@
   justify-content: center;
   justify-items: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 @media (min-width: 36rem) {
