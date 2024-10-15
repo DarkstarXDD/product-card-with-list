@@ -23,7 +23,11 @@ function QuantitySelector({
         onClick={handleDecrease}
         className={styles.button}
       >
-        <BiMinus className={styles.buttonIcon} />
+        <BiMinus
+          aria-hidden="true"
+          focusable="false"
+          className={styles.buttonIcon}
+        />
       </button>
 
       <p aria-live="polite">{children}</p>
@@ -33,7 +37,11 @@ function QuantitySelector({
         onClick={handleIncrease}
         className={styles.button}
       >
-        <BiPlus className={styles.buttonIcon} />
+        <BiPlus
+          aria-hidden="true"
+          focusable="false"
+          className={styles.buttonIcon}
+        />
       </button>
     </div>
   )

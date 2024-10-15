@@ -7,7 +7,13 @@ export default function ModalItem({ name, itemCount, price, image }) {
     <li className={styles.item}>
       <div className={styles.itemOuterWrapper}>
         <div className={styles.itemInnerWrapper}>
-          <img src={image.thumbnail} alt="" className={styles.thumbnail} />
+          <img
+            src={image.thumbnail}
+            alt=""
+            width={100}
+            height={96}
+            className={styles.thumbnail}
+          />
           <h3 className={styles.itemName}>{name}</h3>
           <p className={styles.countPriceWrapper}>
             <span className={styles.itemCount}>{itemCount}x</span>

@@ -17,9 +17,13 @@ function CartItem({ id, name, itemCount, price, onRemove }) {
         <button
           aria-label="clear item"
           onClick={() => onRemove(id)}
-          className={styles.button}
+          className={styles.closeButton}
         >
-          <IoCloseSharp className={styles.buttonIcon} />
+          <IoCloseSharp
+            aria-hidden="true"
+            focusable="false"
+            className={styles.closeButtonIcon}
+          />
         </button>
       </div>
       <div className={styles.divider}></div>
