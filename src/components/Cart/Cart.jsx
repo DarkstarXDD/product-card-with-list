@@ -13,10 +13,11 @@ export default function Cart() {
   const dialogRef = useRef()
   const [isModalOpen, setIsModalOpen] = useState(false)
   const { cart, removeFromCart, resetCart } = useCartContext()
-  const itemCountInCart = cart.length
+  let itemCountInCart = 0
   let cartTotal = 0
 
-  for (let i = 0; i < itemCountInCart; i++) {
+  for (let i = 0; i < cart.length; i++) {
+    itemCountInCart += cart[i].itemCount
     cartTotal += cart[i].itemCount * cart[i].price
   }
 
