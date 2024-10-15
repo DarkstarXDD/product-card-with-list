@@ -1,6 +1,6 @@
 import styles from "./Cart.module.css"
 
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { useCartContext } from "./useCartContext"
 
 import EmptyCart from "../EmptyCart"
@@ -11,6 +11,7 @@ import ConfirmModal from "../ConfirmModal"
 
 export default function Cart() {
   const dialogRef = useRef()
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const { cart, removeFromCart, resetCart } = useCartContext()
   const itemCountInCart = cart.length
   let cartTotal = 0
@@ -24,13 +25,20 @@ export default function Cart() {
   }
 
   function openConfirmation() {
-    dialogRef.current.showModal()
+    setIsModalOpen(true)
   }
 
   function closeConfirmation() {
     dialogRef.current.close()
     resetCart()
+    setIsModalOpen(false)
   }
+
+  useEffect(() => {
+    if (isModalOpen && dialogRef.current) {
+      dialogRef.current.showModal()
+    }
+  }, [isModalOpen])
 
   if (itemCountInCart === 0) {
     return (
@@ -59,12 +67,14 @@ export default function Cart() {
       <CarbonNeutral />
       <Button onClick={openConfirmation}>Confirm Order</Button>
 
-      <ConfirmModal
-        dialogRef={dialogRef}
-        cart={cart}
-        cartTotal={cartTotal}
-        onClose={closeConfirmation}
-      />
+      {isModalOpen && (
+        <ConfirmModal
+          dialogRef={dialogRef}
+          cart={cart}
+          cartTotal={cartTotal}
+          onClose={closeConfirmation}
+        />
+      )}
     </div>
   )
 }

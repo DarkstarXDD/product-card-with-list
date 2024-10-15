@@ -1,11 +1,21 @@
 import styles from "./ConfirmModal.module.css"
 
+import { useEffect } from "react"
+
 import IconCheck from "../Icons/IconCheck"
 
 import ModalItem from "../ModalItem"
 import Button from "../Button"
 
 export default function ConfirmModal({ dialogRef, cart, cartTotal, onClose }) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      document.body.style.overflow = "visible"
+    }
+  }, [])
+
   return (
     <dialog ref={dialogRef} className={styles.dialog}>
       <div className={styles.modalWrapper}>
