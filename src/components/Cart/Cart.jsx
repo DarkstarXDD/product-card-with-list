@@ -4,7 +4,7 @@ import { useRef } from "react"
 import { useCartContext } from "./useCartContext"
 
 import EmptyCart from "../EmptyCart"
-import CartItem from "./CartItem"
+import CartItem from "../CartItem"
 import CarbonNeutral from "../CarbonNeutral"
 import Button from "../Button"
 import ConfirmModal from "../ConfirmModal"
