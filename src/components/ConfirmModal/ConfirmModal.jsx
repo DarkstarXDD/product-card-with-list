@@ -9,12 +9,20 @@ import Button from "../Button"
 
 export default function ConfirmModal({ dialogRef, cart, cartTotal, onClose }) {
   useEffect(() => {
+    function onKeyDown(event) {
+      if (event.key === "Escape") {
+        onClose()
+      }
+    }
+
     document.body.style.overflow = "hidden"
+    window.addEventListener("keydown", onKeyDown)
 
     return () => {
       document.body.style.overflow = "visible"
+      window.removeEventListener("keydown", onKeyDown)
     }
-  }, [])
+  }, [onClose])
 
   return (
     <dialog ref={dialogRef} className={styles.dialog}>
