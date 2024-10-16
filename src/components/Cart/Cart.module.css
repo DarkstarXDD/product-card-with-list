@@ -1,7 +1,6 @@
 .cart {
   width: 100%;
   max-width: 40rem;
-  max-height: max-content;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -16,6 +15,7 @@
 @media (min-width: 90rem) {
   .cart {
     grid-area: cart;
+    align-self: start;
   }
 }
 
