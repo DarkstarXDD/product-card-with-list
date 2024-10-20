@@ -1,12 +1,10 @@
-import styles from "./FoodList.module.css"
-
 import FoodItem from "../FoodItem"
 
 import data from "../../data/data.json"
 
 export default function FoodList() {
   return (
-    <div className={styles.foodItems}>
+    <div className="grid justify-center gap-8 md:grid-cols-foodItems-md md:gap-x-6 md:gap-y-8 lg:grid-cols-foodItems-lg">
       {data.map((item) => (
         <FoodItem
           key={item.name}

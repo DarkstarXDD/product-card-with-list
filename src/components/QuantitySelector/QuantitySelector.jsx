@@ -1,5 +1,3 @@
-import styles from "./QuantitySelector.module.css"
-
 import { BiMinus, BiPlus } from "react-icons/bi"
 
 function QuantitySelector({
@@ -17,16 +15,16 @@ function QuantitySelector({
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className="col-start-1 row-start-2 row-end-4 w-40 flex justify-between items-center border border-red rounded-full text-preset-5 bg-red p-3 text-white">
       <button
         aria-label={`Decrease quantity of ${productName}`}
         onClick={handleDecrease}
-        className={styles.button}
+        className="group size-5 flex justify-center items-center border border-white rounded-full outline-white bg-transparent hover:bg-white"
       >
         <BiMinus
           aria-hidden="true"
           focusable="false"
-          className={styles.buttonIcon}
+          className="size-5 group-hover:text-red"
         />
       </button>
 
@@ -35,12 +33,12 @@ function QuantitySelector({
       <button
         aria-label={`Increase quantity of ${productName}`}
         onClick={handleIncrease}
-        className={styles.button}
+        className="group size-5 flex justify-center items-center border border-white rounded-full outline-white bg-transparent hover:bg-white"
       >
         <BiPlus
           aria-hidden="true"
           focusable="false"
-          className={styles.buttonIcon}
+          className="size-5 group-hover:text-red"
         />
       </button>
     </div>

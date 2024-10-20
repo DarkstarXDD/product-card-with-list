@@ -1,5 +1,3 @@
-import styles from "./FoodItem.module.css"
-
 import { useId } from "react"
 import { useCartContext } from "../Cart/useCartContext"
 
@@ -22,13 +20,13 @@ export default function FoodItem({ id, name, price, category, image }) {
   }
 
   return (
-    <section className={styles.foodItem} aria-labelledby={foodId}>
-      <div className={styles.imageButtonWrapper}>
-        <picture className={styles.foodPicture}>
-          <source srcSet={image.desktop} media="(min-width: 1440px)" />
-          <source srcSet={image.tablet} media="(min-width: 576px)" />
+    <section aria-labelledby={foodId} className="grid grid-cols-1 gap-3">
+      <div className="grid grid-rows-button-overlap justify-items-center">
+        <picture className="col-start-1 row-start-1 row-end-3">
+          <source srcSet={image.desktop} media="(min-width: 90rem)" />
+          <source srcSet={image.tablet} media="(min-width: 36rem)" />
           <img
-            className={`${isInCart ? styles.foodImageBorder : styles.foodImage}`}
+            className={`rounded-lg border-2 ${isInCart ? "border-red" : "border-transparent"}`}
             src={image.mobile}
             alt=""
           />
@@ -51,12 +49,12 @@ export default function FoodItem({ id, name, price, category, image }) {
         )}
       </div>
 
-      <div className={styles.itemDetails}>
-        <p className={styles.category}>{category}</p>
-        <h2 id={foodId} className={styles.name}>
+      <div className="flex flex-col items-start justify-center gap-1">
+        <p className="text-preset-4 text-rose-500">{category}</p>
+        <h3 id={foodId} className="text-preset-3 text-rose-900">
           {name}
-        </h2>
-        <p className={styles.price}>${price.toFixed(2)}</p>
+        </h3>
+        <p className="text-preset-3 text-red">${price.toFixed(2)}</p>
       </div>
     </section>
   )

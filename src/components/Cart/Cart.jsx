@@ -1,5 +1,3 @@
-import styles from "./Cart.module.css"
-
 import { useRef, useState, useEffect } from "react"
 import { useCartContext } from "./useCartContext"
 
@@ -43,26 +41,26 @@ export default function Cart() {
 
   if (itemCountInCart === 0) {
     return (
-      <div className={styles.cart}>
-        <h2 className={styles.heading}>Your Cart (0)</h2>
+      <div className="lg:row-start-1 lg:row-end-3 lg:col-start-2 lg:self-start justify-self-center w-full max-w-[40rem] flex flex-col gap-6 rounded-xl p-6 bg-white">
+        <h2 className="text-preset-2 text-red">Your Cart (0)</h2>
         <EmptyCart />
       </div>
     )
   }
 
   return (
-    <div className={styles.cart}>
-      <h2 className={styles.heading}>Your Cart ({itemCountInCart})</h2>
+    <div className="lg:row-start-1 lg:row-end-3 lg:col-start-2 lg:self-start justify-self-center w-full max-w-[40rem] flex flex-col gap-6 rounded-xl p-6 bg-white">
+      <h2 className="text-preset-2 text-red">Your Cart ({itemCountInCart})</h2>
 
-      <ul className={styles.items}>
+      <ul className="grid gap-4">
         {cart.map((item) => (
           <CartItem key={item.id} {...item} onRemove={onRemove} />
         ))}
       </ul>
 
-      <p className={styles.totalPriceWrapper}>
-        <span className={styles.totalPriceText}>Order Total</span>
-        <span className={styles.totalPrice}>${cartTotal.toFixed(2)}</span>
+      <p className="flex justify-between items-center text-rose-900">
+        <span className="text-preset-4 ">Order Total</span>
+        <span className="text-preset-2">${cartTotal.toFixed(2)}</span>
       </p>
 
       <CarbonNeutral />

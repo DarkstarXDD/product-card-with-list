@@ -1,12 +1,12 @@
-import styles from "./EmptyCart.module.css"
-
 import IconEmptyCart from "../Icons/IconEmptyCart"
 
 export default function EmptyCart() {
   return (
-    <div className={styles.emptyCartWrapper}>
+    <div className="grid justify-items-center gap-4 py-4">
       <IconEmptyCart style={{ width: "8rem", height: "8rem" }} />
-      <p className={styles.text}>Your added items will appear here</p>
+      <p className="text-preset-5 text-rose-500">
+        Your added items will appear here
+      </p>
     </div>
   )
 }
