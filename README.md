@@ -21,7 +21,7 @@ This is my solution to the [Product List with Cart](https://www.frontendmentor.i
 ### Built with. 🔨
 
 - React.
-- Vanilla CSS (with CSS modules).
+- Tailwind.
 - Vite.
 
 #
@@ -34,6 +34,12 @@ This is my solution to the [Product List with Cart](https://www.frontendmentor.i
 
 #
 
+### Notes. 📌
+
+- I initially did the project with vanilla CSS using CSS modules. But after completing the project i redid all the styles in Tailwind. The solution with vanilla CSS is in a separate branch called [css-modules](https://github.com/DarkstarXDD/product-list-with-cart/tree/css-modules).
+
+#
+
 ### Testing and Accessibility. 🧪
 
 - Tested site usability with keyboard-only navigation.
@@ -42,19 +48,17 @@ This is my solution to the [Product List with Cart](https://www.frontendmentor.i
 - Zoomed the page in and out using Ctrl + Scroll wheel (up to 500%).
 - Tested with the NVDA screen reader.
 - Viewed the site on an iPhone 11 in both portrait and landscape modes.
-- Performed Lighthouse and PageSpeed tests. ([PageSpeed Result.](https://pagespeed.web.dev/analysis/https-product-list-with-cart-darkstarxdd-vercel-app/x1qabh34am?form_factor=mobile))
+- Performed Lighthouse and PageSpeed tests. ([PageSpeed Result.](https://pagespeed.web.dev/analysis/https-product-list-with-cart-darkstarxdd-vercel-app/jh82otudiz?form_factor=mobile))
 
 #
 
-### Tools I Use. 🔧
-
-- [Prettier VS Code Extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Code formatter.
+### Some Tools I Use. 🔧
 
 - [Responsively.app](https://responsively.app/) - A free and open source tool that allows you to test your webpage on different screen sizes, take screenshots and much more.
 
-- [Google Webfonts Helper by Mario Ranftl](https://gwfh.mranftl.com/fonts) - Provides WOFF2 format for Google Fonts.
+- [Favicon.io](https://favicon.io/) - Generate favicons.
 
-- [Color Contrast Checker by coolors.co](https://coolors.co/contrast-checker/112a46-acc8e5) - Check color contrast ratios and if needed, update the colors to match the WCAG guidelines.
+- [Google Webfonts Helper by Mario Ranftl](https://gwfh.mranftl.com/fonts) - Provides WOFF2 format for Google Fonts.
 
 #
 
