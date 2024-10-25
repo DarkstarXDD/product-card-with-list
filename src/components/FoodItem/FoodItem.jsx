@@ -11,12 +11,12 @@ export default function FoodItem({ id, name, price, category, image }) {
 
   const isInCart = itemCount > 0
 
-  function onUpdateItemCount(newCount) {
-    updateItemCount(id, newCount)
-  }
-
   function onAddToCart() {
     addToCart({ id, name, itemCount: 1, price, image })
+  }
+
+  function onUpdateItemCount(newCount) {
+    updateItemCount(id, newCount)
   }
 
   return (
@@ -40,7 +40,6 @@ export default function FoodItem({ id, name, price, category, image }) {
 
         {isInCart && (
           <QuantitySelector
-            productName="Waffle with Berries"
             itemCount={itemCount}
             onUpdateItemCount={onUpdateItemCount}
           >

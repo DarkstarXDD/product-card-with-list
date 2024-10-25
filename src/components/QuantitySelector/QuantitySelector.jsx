@@ -1,11 +1,6 @@
 import { BiMinus, BiPlus } from "react-icons/bi"
 
-function QuantitySelector({
-  children,
-  productName,
-  itemCount,
-  onUpdateItemCount,
-}) {
+function QuantitySelector({ children, itemCount, onUpdateItemCount }) {
   function handleDecrease() {
     onUpdateItemCount(itemCount - 1)
   }
@@ -17,7 +12,7 @@ function QuantitySelector({
   return (
     <div className="col-start-1 row-start-2 row-end-4 w-40 flex justify-between items-center border border-red rounded-full text-preset-5 bg-red p-3 text-white">
       <button
-        aria-label={`Decrease quantity of ${productName}`}
+        aria-label={`Decrease quantity`}
         onClick={handleDecrease}
         className="group size-5 flex justify-center items-center border border-white rounded-full outline-white bg-transparent hover:bg-white"
       >
@@ -31,7 +26,7 @@ function QuantitySelector({
       <p aria-live="polite">{children}</p>
 
       <button
-        aria-label={`Increase quantity of ${productName}`}
+        aria-label={`Increase quantity`}
         onClick={handleIncrease}
         className="group size-5 flex justify-center items-center border border-white rounded-full outline-white bg-transparent hover:bg-white"
       >
